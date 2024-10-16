@@ -174,7 +174,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6487994197024019727, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 955219649}
+    - targetCorrespondingSourceObject: {fileID: 8876369659170266889, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1254531370}
   m_SourcePrefab: {fileID: 100100000, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
 --- !u!1 &134527401
 GameObject:
@@ -215,7 +221,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134527401}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3abb87f361205ef4b9267449904b6f04, type: 3}
   m_Name: 
@@ -506,7 +512,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873170940}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3abb87f361205ef4b9267449904b6f04, type: 3}
   m_Name: 
@@ -567,6 +573,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &955219645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6487994197024019727, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
+  m_PrefabInstance: {fileID: 117572254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &955219649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955219645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3c691036e9b340ae9c121149a13c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 2320683914150398016, guid: 9a0dcc064c0cd574abdc77a527b57abb, type: 3}
+  _keyTrigger: D
+  gravityMultiplier: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,7 +864,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055152973}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3abb87f361205ef4b9267449904b6f04, type: 3}
   m_Name: 
@@ -930,6 +956,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 0.65
   velocity: 5
+--- !u!1 &1254531366 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8876369659170266889, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
+  m_PrefabInstance: {fileID: 117572254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1254531370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254531366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3c691036e9b340ae9c121149a13c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectile: {fileID: 2320683914150398016, guid: 9a0dcc064c0cd574abdc77a527b57abb, type: 3}
+  _keyTrigger: Q
+  gravityMultiplier: 10
 --- !u!1 &1374589092
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,15 +1026,15 @@ MonoBehaviour:
   maxTessellationFactor: 3
   tessellationFactorFadeStart: 150
   tessellationFactorFadeRange: 1850
-  refractionColor: {r: 0.10196079, g: 0.5019608, b: 0.47342354, a: 1}
+  refractionColor: {r: 0, g: 1, b: 0.8878383, a: 1}
   maxRefractionDistance: 0.5
   absorptionDistance: 1.5
-  scatteringColor: {r: 0, g: 0.4, b: 0.31623957, a: 1}
-  ambientScattering: 0.378
-  heightScattering: 0.412
-  displacementScattering: 0.768
-  directLightTipScattering: 0.583
-  directLightBodyScattering: 0.019
+  scatteringColor: {r: 0, g: 1, b: 0.7758222, a: 1}
+  ambientScattering: 1
+  heightScattering: 0.43
+  displacementScattering: 0.743
+  directLightTipScattering: 0.67
+  directLightBodyScattering: 1
   maximumHeightOverride: 0
   caustics: 0
   causticsIntensity: 0.5
@@ -1167,7 +1213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853640920}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3abb87f361205ef4b9267449904b6f04, type: 3}
   m_Name: 
@@ -1218,7 +1264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903363220}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3abb87f361205ef4b9267449904b6f04, type: 3}
   m_Name: 

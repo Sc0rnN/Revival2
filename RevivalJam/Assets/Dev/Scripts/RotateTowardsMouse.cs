@@ -17,10 +17,7 @@ public class RotateTowardsMouseAndMove : MonoBehaviour
     void Update()
     {
         RotateObjectTowardsMouse();
-
         MoveObjectForward();
-
-        Debug.Log(rb.GetAccumulatedForce());
     }
 
     void RotateObjectTowardsMouse()

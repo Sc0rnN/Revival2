@@ -4,14 +4,21 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class MoveForward : MonoBehaviour
 {
-    [SerializeField] private float velocity = 5f;
+    [SerializeField] private float _velocity = 5f;
+    [SerializeField] private Vector3 _originalDirection = new Vector3(1, 0, 0);
 
-    private Rigidbody rb;
+    private Rigidbody _rb;
 
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        _rb = GetComponent<Rigidbody>();
 
-        rb.linearVelocity = transform.forward * velocity;
+        _rb.linearVelocity = _originalDirection * _velocity;
     }
+
+    public void SetDirection(Vector3 direction)
+    {
+        _originalDirection = direction;
+    }
+
 }
