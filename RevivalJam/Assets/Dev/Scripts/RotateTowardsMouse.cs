@@ -19,6 +19,8 @@ public class RotateTowardsMouseAndMove : MonoBehaviour
         RotateObjectTowardsMouse();
 
         MoveObjectForward();
+
+        Debug.Log(rb.GetAccumulatedForce());
     }
 
     void RotateObjectTowardsMouse()
@@ -40,6 +42,6 @@ public class RotateTowardsMouseAndMove : MonoBehaviour
 
     void MoveObjectForward()
     {
-        rb.velocity = transform.forward * velocity;
+        rb.linearVelocity = transform.forward * velocity;
     }
 }

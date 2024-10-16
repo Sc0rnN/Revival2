@@ -12,6 +12,6 @@ public class MoveForward : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        rb.velocity = transform.forward * velocity;
+        rb.linearVelocity = transform.forward * velocity;
     }
 }
