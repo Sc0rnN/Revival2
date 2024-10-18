@@ -22,10 +22,10 @@ public class Shoot : MonoBehaviour
 
     private void Fire()
     {
-        Debug.Log("Fire !");
         GameObject projectile = Instantiate(_projectile, transform.position, transform.rotation);
         MoveForward moveForward = projectile.GetComponent<MoveForward>();
         moveForward.SetDirection(transform.forward);
+        projectile.GetComponent<CreatorRememberer>().DefineCreator(transform.parent.parent.gameObject);
 
         _canShoot = false;
         CooldownProgress.Value = 0f;
