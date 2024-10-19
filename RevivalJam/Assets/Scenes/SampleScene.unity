@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: boat
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8876369659170266889, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}
       propertyPath: m_Name
       value: CanonLeft
@@ -1153,7 +1157,7 @@ GameObject:
   - component: {fileID: 1246282171}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1264,6 +1268,7 @@ MonoBehaviour:
   type: 3
   texture: {fileID: 0}
   m_Version: 2
+
 --- !u!1 &1254531366 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8876369659170266889, guid: 183ec7df4b8afb3469529355cf91ffd1, type: 3}

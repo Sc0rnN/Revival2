@@ -9,10 +9,8 @@ public class DammageOnTriggerEnger : MonoBehaviour
 
         if(hpHeandler != null)
         {
-            Debug.Log("components ok");
             if(creator != other.gameObject || creator == null)
             {
-                Debug.Log("dammaged !");
                 hpHeandler.TakeDamage(1);
             }         
         }
