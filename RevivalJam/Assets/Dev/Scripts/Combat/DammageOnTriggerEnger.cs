@@ -1,19 +1,41 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DammageOnTriggerEnger : MonoBehaviour
 {
+    private GameObject _creator;
+
+    public UnityEvent onPlayerHit; // Ajouter un UnityEvent
+
+    public void DefineCreator(GameObject creator)
+    {
+        _creator = creator;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        HealthPointsHandler hpHeandler = other.GetComponent<HealthPointsHandler>();
-        GameObject creator = other.GetComponent<CreatorRememberer>()?.Creator;
+        if (other.gameObject == _creator) return;
 
-        if(hpHeandler != null)
+        HealthPointsHandler hpHandler = other.GetComponent<HealthPointsHandler>();
+
+        if (hpHandler == null)
         {
-            if(creator != other.gameObject || creator == null)
-            {
-                hpHeandler.TakeDamage(1);
-            }         
+            hpHandler = other.GetComponentInParent<HealthPointsHandler>();
         }
-        
+
+        if (hpHandler != null)
+        {
+            hpHandler.TakeDamage(1);
+        }
+
+        if (!other.gameObject.CompareTag("EnnemyControlZone"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Player"))
+        {
+            onPlayerHit?.Invoke();
+        }
     }
 }

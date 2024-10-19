@@ -5,7 +5,8 @@ public class Shoot : MonoBehaviour
 {
     [SerializeField] private GameObject _projectile;
     [SerializeField] private string _keyTrigger;
-    [SerializeField] private float _cooldownDuration = 2f; 
+    [SerializeField] private float _cooldownDuration = 2f;
+    [SerializeField] private float _xOffset = 1f;
     public ReactiveProperty<float> CooldownProgress { get; private set; } = new ReactiveProperty<float>(1f);
 
     private bool _canShoot = true;
@@ -22,10 +23,11 @@ public class Shoot : MonoBehaviour
 
     private void Fire()
     {
-        GameObject projectile = Instantiate(_projectile, transform.position, transform.rotation);
+        Vector3 spawnPosition = transform.position + (transform.forward * _xOffset);
+
+        GameObject projectile = Instantiate(_projectile, spawnPosition, transform.rotation);
         MoveForward moveForward = projectile.GetComponent<MoveForward>();
         moveForward.SetDirection(transform.forward);
-        projectile.GetComponent<CreatorRememberer>().DefineCreator(transform.parent.parent.gameObject);
 
         _canShoot = false;
         CooldownProgress.Value = 0f;
@@ -43,9 +45,8 @@ public class Shoot : MonoBehaviour
             () =>
             {
                 _canShoot = true;
-                CooldownProgress.Value = 1f; 
+                CooldownProgress.Value = 1f;
             })
             .AddTo(this);
     }
-
 }

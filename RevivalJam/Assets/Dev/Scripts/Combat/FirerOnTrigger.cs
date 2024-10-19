@@ -6,12 +6,14 @@ public class FirerOnTrigger : MonoBehaviour
 {
     [SerializeField] private GameObject _projectile;
     [SerializeField] private GameObject _canon;
+    [SerializeField] private float _xOffset = 1f;
+    [SerializeField] private float _projectileDirection = 1f;
+    private bool _hasShot = true;
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player detected");
             StartCoroutine(FireAfterDelay(0.5f));
         }
     }
@@ -24,10 +26,18 @@ public class FirerOnTrigger : MonoBehaviour
 
     private void Fire()
     {
-        GameObject projectile = Instantiate(_projectile, _canon.transform.position, Quaternion.identity);
-        MoveForward moveForward = projectile.GetComponent<MoveForward>();
-        moveForward.SetDirection(transform.forward);
-        projectile.GetComponent<CreatorRememberer>().DefineCreator(transform.parent.parent.gameObject);
-        Debug.Log(transform.parent.parent.gameObject);
+        if(_hasShot)
+        {
+            _hasShot = false;
+            Vector3 spawnPosition = transform.position + (transform.forward * _xOffset);
+            GameObject projectile = Instantiate(_projectile, spawnPosition, transform.rotation);
+
+            MoveForward moveForward = projectile.GetComponent<MoveForward>();
+            moveForward.SetDirection(transform.forward * _projectileDirection);
+
+            projectile.GetComponent<DammageOnTriggerEnger>().DefineCreator(gameObject);
+        }
+       
     }
+
 }
