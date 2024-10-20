@@ -2743,11 +2743,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 959545808}
+  - {fileID: 1973362907}
   - {fileID: 1559367718}
   - {fileID: 1348956932}
   - {fileID: 1732454559}
   - {fileID: 1178893385}
-  - {fileID: 1973362907}
   m_Father: {fileID: 1975104453}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3064,6 +3064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverMenu: {fileID: 877419026}
+  HealthBar: {fileID: 1204312495}
   _maxHealth: 3
 --- !u!1 &1254531366 stripped
 GameObject:
