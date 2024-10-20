@@ -27,8 +27,12 @@ public class HealthPointsHandler : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
-        GameOverMenu.SetActive(true);
+        if (CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            GameOverMenu.SetActive(true);
+        }
+       
 
     }
 
