@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_text: Sound
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
-  m_sharedMaterial: {fileID: -3079001234540498644, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
+  m_sharedMaterial: {fileID: 2083421615691409732, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_text: Set Sail
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
-  m_sharedMaterial: {fileID: -3079001234540498644, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
+  m_sharedMaterial: {fileID: 2083421615691409732, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1530,11 +1530,11 @@ MonoBehaviour:
   maxRefractionDistance: 0.5
   absorptionDistance: 1.5
   scatteringColor: {r: 0.00901883, g: 0.0490081, b: 0.022593036, a: 1}
-  ambientScattering: 0.008
-  heightScattering: 0.122
-  displacementScattering: 0.307
-  directLightTipScattering: 0.6
-  directLightBodyScattering: 0.5
+  ambientScattering: 0
+  heightScattering: 0
+  displacementScattering: 0.579
+  directLightTipScattering: 1
+  directLightBodyScattering: 1
   maximumHeightOverride: 0
   caustics: 0
   causticsIntensity: 0.5
@@ -1635,7 +1635,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   repetitionSize: 500
   largeOrientationValue: 0
-  largeWindSpeed: 19
+  largeWindSpeed: 35
   largeChaos: 1
   largeBand0Multiplier: 1
   largeBand0FadeMode: 1
@@ -1806,7 +1806,7 @@ MonoBehaviour:
   m_text: Tutorial
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
-  m_sharedMaterial: {fileID: -3079001234540498644, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
+  m_sharedMaterial: {fileID: 2083421615691409732, guid: 9091635d400887349b6dc0a3990d9fc8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

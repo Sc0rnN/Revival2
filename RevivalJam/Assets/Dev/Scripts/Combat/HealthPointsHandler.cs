@@ -18,7 +18,7 @@ public class HealthPointsHandler : MonoBehaviour
     {
         _currentHealth.Value -= damageAmount;
         Debug.Log("current hp : " + _currentHealth.Value);
-        UiHealthHandler(_currentHealth.Value);
+        if (CompareTag("Player")) { UiHealthHandler(_currentHealth.Value); }
         if (_currentHealth.Value <= 0)
         {
             GameOver();
