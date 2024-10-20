@@ -4,6 +4,7 @@ using UniRx;
 public class HealthPointsHandler : MonoBehaviour
 {
     [SerializeField] GameObject GameOverMenu;
+    [SerializeField] GameObject HealthBar;
     [SerializeField] private int _maxHealth = 3;
     private ReactiveProperty<int> _currentHealth = new();
     public ReactiveProperty<int> CurrentHealth => _currentHealth;
@@ -17,7 +18,7 @@ public class HealthPointsHandler : MonoBehaviour
     {
         _currentHealth.Value -= damageAmount;
         Debug.Log("current hp : " + _currentHealth.Value);
-
+        UiHealthHandler(_currentHealth.Value);
         if (_currentHealth.Value <= 0)
         {
             GameOver();
@@ -27,9 +28,24 @@ public class HealthPointsHandler : MonoBehaviour
 
     public void GameOver()
     {
-        Time.timeScale = 0f;
-        GameOverMenu.SetActive(true);
+        if (CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            GameOverMenu.SetActive(true);
+        }
+       
 
+    }
+
+    public void UiHealthHandler(int health)
+    {
+        for (int i = 0; i <= _maxHealth; i++)
+        {
+            if ( i> health)
+            {
+                HealthBar.transform.GetChild(2*i - 1).gameObject.SetActive(false);
+            }
+        }
     }
 
 
