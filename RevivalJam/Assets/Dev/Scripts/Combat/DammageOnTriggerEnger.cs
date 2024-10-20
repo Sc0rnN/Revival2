@@ -28,7 +28,7 @@ public class DammageOnTriggerEnger : MonoBehaviour
             hpHandler.TakeDamage(1);
         }
 
-        if (!other.gameObject.CompareTag("EnnemyControlZone"))
+        if (!other.gameObject.CompareTag("EnnemyControlZone") || !other.gameObject.CompareTag("Island"))
         {
             Destroy(gameObject);
         }
@@ -36,6 +36,11 @@ public class DammageOnTriggerEnger : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             onPlayerHit?.Invoke();
+        }
+
+        if (gameObject.CompareTag("Island"))
+        {
+            hpHandler.TakeDamage(100);
         }
     }
 }
