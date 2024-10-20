@@ -54,7 +54,7 @@ public class RotateTowardsMouseAndMove : MonoBehaviour
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
         Vector3 player_Direction = transform.right * horizontalInput + transform.forward * verticalInput;
         Quaternion targetRotation = Quaternion.LookRotation(player_Direction);
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.Space))
         {
             movementSpeed = PlayerMovementSpeedWindy;
         }
